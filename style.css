@@ -142,3 +142,8 @@ section {
     font-size: .6rem;
     color: red;
 }
+
+.warning {
+    background: rgba(0,0,0,.58);
+    color: red;
+}
