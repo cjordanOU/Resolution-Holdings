@@ -1,5 +1,6 @@
 # Resolution-Holdings
 Website for CSI 3450 Project.
+
 Created by Cameron Jordan, William Buerkle, and Brandon Sharp.
 
 # How to run the website using PHP
