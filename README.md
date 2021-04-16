@@ -14,11 +14,13 @@ You should now be able to see the website running at http://localhost/Resolution
 PHP requires a webserver to process the webpage before displaying it in your browser, so you can't just open it like you can with an HTML document.
 
 # How to set up the SQL database
+-Navigate to the phpMyAdmin page to view the mySQL information.
+
 -Make new database called "resolution-holdings"
 
--import members.sql into "resolution-holdings"
+-Import members.sql into "resolution-holdings"
 
--make sure $dbLocation is set to the proper database location in the file "Includes/dbConfig.php"
+-Make sure $dbLocation is set to the proper database location in the file "Includes/dbConfig.php"
 (For running locally with XAMPP, keep the default location specified)
 
--set $dbUsername and $dbPassword to the password used on your db
+-Set $dbUsername and $dbPassword to the password used on your db
