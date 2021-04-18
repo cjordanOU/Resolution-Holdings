@@ -6,8 +6,16 @@
             <a href="contact.php" title="View our contact information">Contact</a>
         </div>
         <div class="nav-right">
-            <a href="login.php" title="Click here to login">Login</a>
-            <a href="signup.php" title="Click here to sign up">Sign Up</a>
+            <?php
+                // Check to see if the user is logged in, if not then redirect to the login page
+                if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+                    echo "<a href='login.php' title='Click here to login'>Login</a> <a href='signup.php' title='Click here to sign up'>Sign Up</a>";
+                }
+
+                else {
+                    echo "<a href='Includes/logout.php' title='Click here to log out'>Log Out</a> <a href='accounts.php' title='View your accounts'>View Accounts</a>";
+                }
+            ?>
         </div>
     </nav>
 </header>
