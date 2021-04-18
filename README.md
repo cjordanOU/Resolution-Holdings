@@ -18,7 +18,11 @@ https://www.apachefriends.org/index.html
 PHP requires a webserver to process the webpage before displaying it in your browser, so you can't just open it like you can with an HTML document.
 
 # How to set up the SQL database
+-Make sure Apache and mySQL are running from the XAMPP Control Panel.
+
 -Navigate to the phpMyAdmin page to view the mySQL information.
+
+http://localhost/phpmyadmin/index.php
 
 -Make new database called "resolution-holdings"
 
