@@ -11,21 +11,24 @@
     </head>
 
     <body>
+        <?php require('Includes/loginHandler.php'); ?>
         <?php require('Includes/header.php'); ?>
 
         <section>
             <div class="centered container login-area">
                 <h1>Login</h1>
-                <form id="loginForm" action="loginProcess.php" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <label>Username:</label>
-                    <input type="text" name="username" size="40" title="Enter your username" required>
+                    <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" required>
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
                     <br>
 
                     <label>Password:</label>
-                    <input type="password" name="password" size="40" title="Enter your username" required>
+                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" required>
+                    <span class="invalid-feedback"><?php echo $password_err; ?>
                     <br>
 
-                    <input type="submit" name="loginSubmit" value="Submit" class="fancyButton-1">
+                    <input type="submit" name="loginSubmit" value="Login" class="fancyButton-1">
                 </form>
                 <p>Need to register for an account? <a href="signup.php" title="Click here to go to the sign up page" class="link-1">Sign up here.</a></p>
             </div>

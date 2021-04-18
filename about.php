@@ -12,11 +12,11 @@
 
     <body>
         <?php require('Includes/header.php'); ?>
-        <?php require('Includes/loginCheck.php'); ?>
 
         <section>
-            <h1>Hello, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Thank you for choosing Resolution Holdings.</h1>
-
+            <div class="centered container">
+                <h1>About us</h1>
+            </div>
         </section>
     </body>
 </html>
