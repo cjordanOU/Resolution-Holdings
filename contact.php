@@ -3,7 +3,7 @@
     <head>
         <?php require('Includes/metadata.php'); ?>
 
-        <title>Resolution Holdings - Home</title>
+        <title>Resolution Holdings - Contact Us</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
         <!-- Styles -->
@@ -11,6 +11,7 @@
     </head>
 
     <body>
+        <?php require('Includes/loginCheckBasic.php'); ?>
         <?php require('Includes/header.php'); ?>
 
         <section>

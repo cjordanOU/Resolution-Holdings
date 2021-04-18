@@ -11,6 +11,7 @@
     </head>
 
     <body>
+        <?php require('Includes/loginCheckBasic.php'); ?>
         <?php require('Includes/header.php'); ?>
 
         <section>

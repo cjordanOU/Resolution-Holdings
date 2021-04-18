@@ -3,7 +3,7 @@
     <head>
         <?php require('Includes/metadata.php'); ?>
 
-        <title>Resolution Holdings - Home</title>
+        <title>Resolution Holdings - Accounts</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
         <!-- Styles -->
@@ -11,8 +11,8 @@
     </head>
 
     <body>
-        <?php require('Includes/header.php'); ?>
         <?php require('Includes/loginCheck.php'); ?>
+        <?php require('Includes/header.php'); ?>
 
         <section>
             <h1>Hello, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Thank you for choosing Resolution Holdings.</h1>
