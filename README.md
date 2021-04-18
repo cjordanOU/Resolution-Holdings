@@ -31,4 +31,4 @@ http://localhost/phpmyadmin/index.php
 -Make sure $dbLocation is set to the proper database location in the file "Includes/dbConfig.php"
 (For running locally with XAMPP, keep the default location specified)
 
--Set $dbUsername and $dbPassword to the password used on your db
+-Set $dbUsername and $dbPassword to the password used on your database
