@@ -4,11 +4,15 @@ Website for CSI 3450 Project.
 Created by Cameron Jordan, William Buerkle, and Brandon Sharp.
 
 # How to run the website using PHP
-The easiest way to run this website using PHP on your own local computer is to download and install XAMPP.
+-The easiest way to run this website using PHP on your own local computer is to download and install XAMPP.
+
 https://www.apachefriends.org/index.html
-After installing, move the Resolution-Holdings folder inside of the htdocs directory in xampp.
-Next, make sure Apache and mySQL is running from the XAMPP Control Panel.
-You should now be able to see the website running at http://localhost/Resolution-Holdings/index.php
+
+-After installing, move the Resolution-Holdings folder inside of the htdocs directory in xampp.
+
+-Next, make sure Apache and mySQL is running from the XAMPP Control Panel.
+
+-You should now be able to see the website running at http://localhost/Resolution-Holdings/index.php
 
 # NOTE: You won't be able to display the pages properly without using apache or another PHP server.
 PHP requires a webserver to process the webpage before displaying it in your browser, so you can't just open it like you can with an HTML document.
