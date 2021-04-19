@@ -10,7 +10,7 @@
     if ($result-> num_rows > 0) {
         while ($row = $result-> fetch_assoc()) {
             //echo "<tr><td>". $row["ACCOUNT_ID"] ."</td><td>&#36;". $row["ACCOUNT_BALACE"] ."</td><td>". $row["ACCOUNT_TYPE"] ."</td></tr>";
-            echo "<section class='account-box'><h2>Member ID: ". $_SESSION["id"] ."</h2>";
+            //echo "<section class='account-box'><h2>Member ID: ". $_SESSION["id"] ."</h2>";
             echo "<section class='account-box'><h2>Account ID: ". $row["ACCOUNT_ID"] ."</h2>";
             echo "<div class='account-info'><h4>Account Type: ". ucfirst($row["ACCOUNT_TYPE"]) ."</h4>";
             echo "<h4>Account Status: ". ucfirst($row["ACCOUNT_STATUS"]) ."</h4>";
