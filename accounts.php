@@ -15,8 +15,13 @@
         <?php require('Includes/header.php'); ?>
 
         <section>
-            <h1>Hello, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Thank you for choosing Resolution Holdings.</h1>
+            <div class="centered container">
+                <h1>Now viewing accounts for <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+            </div>
 
+            <div class="centered container">
+                <?php require("Includes/accountHandler.php");?>
+            </div>
         </section>
     </body>
 </html>

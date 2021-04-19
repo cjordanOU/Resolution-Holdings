@@ -147,3 +147,22 @@ section {
     background: rgba(0,0,0,.58);
     color: red;
 }
+
+.account-box {
+    float: none;
+    padding-top: 25px;
+    padding-bottom: 170px;
+    background: rgb(59, 92, 103);
+    margin-top: 20px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+
+.account-info {
+    width: 50%;
+    float: left;
+}
+
+.account-balance {
+    width: 50%;
+    float: right;
+}
