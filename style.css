@@ -189,3 +189,60 @@ section {
     -webkit-transition: 0.2s;
     transition: 0.2s;
 }
+
+.parallaxBG-large {
+    /* Makes a parallax image background (Large) */
+    min-height: 40vh; 
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5vh 5vw;
+    /* Specify the background image in HTML using the style attribute */
+}
+
+.parallaxBG-small {
+    /* Makes a parallax image background (Small) */
+    min-height: 200px; 
+    background-attachment: fixed;
+    background-position: 0% 83%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5vh 5vw;
+    /* Specify the background image in HTML using the style attribute */
+}
+
+.parallaxText1 {
+    /* Positions the parallaxText to be on top of the parallaxBG div */
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-45%, -65%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.parallaxText1 h1 {
+    /* Header1 Text for parallaxText */
+    color: white;
+    font-size: 3em;
+}
+
+.parallaxText1 h2, .parallaxText2 h2 {
+    color: white;
+    font-size: 2em;
+}
+
+.parallaxText2 {
+    /* Positions the parallaxText to be on top of the parallaxBG div */
+    position: absolute;
+    top: 620px;
+    left: 700px;
+    transform: translate(-1100px, -435px);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
