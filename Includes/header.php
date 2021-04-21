@@ -5,6 +5,7 @@
             <a href="about.php" title="View information about our organization">About</a>
             <a href="contact.php" title="View our contact information">Contact</a>
         </div>
+
         <div class="nav-right">
             <?php
                 // Check to see if the user is logged in, if not then redirect to the login page
@@ -13,7 +14,7 @@
                 }
 
                 else {
-                    echo "<a href='Includes/logout.php' title='Click here to log out'>Log Out</a> <a href='accounts.php' title='View your accounts'>View Accounts</a>";
+                    echo "<a href='accounts.php' title='View your accounts'>View Accounts</a> <a href='Includes/logout.php' title='Click here to log out'>Log Out</a>";
                 }
             ?>
         </div>
