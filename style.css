@@ -166,3 +166,26 @@ section {
     width: 50%;
     float: right;
 }
+
+.account-open {
+    color: rgb(12, 173, 12);
+}
+
+.account-shut {
+    color: red;
+}
+
+.transaction-button {
+    background:rgb(181, 212, 212);
+    padding: 6px;
+    margin-bottom: 25px;
+    color:rgba(0,0,0);
+    text-decoration: none;
+}
+
+.transaction-button:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    background: rgb(90, 143, 143);
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
