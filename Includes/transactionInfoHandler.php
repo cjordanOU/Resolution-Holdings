@@ -3,8 +3,8 @@
     require_once 'Includes/dbConfig.php';
 
     // Select all of the user's accounts and display them
-    $sql = "SELECT * FROM transactions WHERE ACCOUNT_ID=2"; // Hardcoded Debug
-    //$sql = "SELECT * FROM transactions WHERE ACCOUNT_ID={$_POST["transaction_account"]}";
+    //$sql = "SELECT * FROM transactions WHERE ACCOUNT_ID=2"; // Hardcoded Debug
+    $sql = "SELECT * FROM transactions WHERE ACCOUNT_ID={$_POST["transaction_account"]}";
     $result = $connection-> query($sql);
 
     if ($result-> num_rows > 0) {
