@@ -14,7 +14,7 @@ $connection = mysqli_connect("$dbLocation", "$dbUsername", "$dbPassword", "$dbNa
 
 // Connection Check
 if ($connection-> connect_error) {
-    die("ERROR: Connection to database failed. ". $conn-> connect_error);
+    die("ERROR: Connection to database failed. ". $connection-> connect_error);
 }
 
 ?>
