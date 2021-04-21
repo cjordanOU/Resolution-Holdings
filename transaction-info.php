@@ -11,12 +11,16 @@
     </head>
 
     <body>
+        <?php require('Includes/loginCheck.php'); ?>
         <?php require('Includes/header.php'); ?>
 
         <section>
-            <div class="centered container warning">
-                <h1>Warning!</h1>
-                <p>This page is under construction</p>
+            <div class="centered container">
+                <h1>Now viewing transactions for the current account.</h1>
+            </div>
+
+            <div class="centered container">
+                <?php require("Includes/transactionInfoHandler.php");?>
             </div>
         </section>
     </body>
