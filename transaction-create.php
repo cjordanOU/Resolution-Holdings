@@ -3,7 +3,7 @@
     <head>
         <?php require('Includes/metadata.php'); ?>
 
-        <title>Resolution Holdings - View Transactions</title>
+        <title>Resolution Holdings - New Transaction</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
         <!-- Styles -->
