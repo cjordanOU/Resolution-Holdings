@@ -16,14 +16,14 @@
             
             if (($row["ACCOUNT_STATUS"]) == 'open') {
                 echo "<h4>Account Status: <span class='account-open'>". ucfirst($row["ACCOUNT_STATUS"]) ."</span></h4>";
-                echo "<h4>Account Created On:". $row["CREATED"] ."</h4>";
+                echo "<h4>Account Created On: ". $row["CREATED"] ."</h4>";
                 echo "</div><div class='account-balance'>";
                 echo "<h3>Account Balance: &#36;". number_format($row["ACCOUNT_BALACE"],2) ."</h3>"; // Note: The database uses 'BALACE' not 'BALANCE'
                 echo "<a class='transaction-button' href='transaction-info.php' title='View the transactions associated with this account'>View Transactions</a><br><br><a class='transaction-button' href='transaction-create.php' title='Make a new transaction online'>Make Transaction</a>";
             }
             else {
                 echo "<h4>Account Status: <span class='account-shut'>". ucfirst($row["ACCOUNT_STATUS"]) ."</span></h4>";
-                echo "<h4>Account Created On:". $row["CREATED"] ."</h4>";
+                echo "<h4>Account Created On: ". $row["CREATED"] ."</h4>";
                 echo "</div><div class='account-balance'>";
                 echo "<h3>Account Balance: &#36;". number_format($row["ACCOUNT_BALACE"],2) ."</h3>"; // Note: The database uses 'BALACE' not 'BALANCE'
                 echo "<a class='transaction-button' href='transaction-info.php' title='View the transactions associated with this account'>View Transactions</a><br>";
