@@ -11,13 +11,44 @@
     </head>
 
     <body>
+        <?php require('Includes/loginCheck.php'); ?>
         <?php require('Includes/header.php'); ?>
 
         <section>
-            <div class="centered container warning">
-                <h1>Warning!</h1>
-                <p>This page is under construction</p>
+            <div class="container login-area">
+                <h1>New Transaction</h1>
+                <p>Account-ID: <?php echo $_POST["transaction_account"];?></p>
+
+                <!-- Form is protected from SQL injection by using htmlspecialchars -->
+                <form id="signupForm" action="accounts.php" method="post">
+                    <div class="form-section">
+                        <label>Transaction Amount:</label>
+                        <input type="text" name="transactionAmount" size="40" title="Enter your first name" required>
+                    </div>
+
+                    <div class="form-section">
+                        <label>Transaction Type:</label>
+                        <select name="transactionType" title="Select your applicable gender" required>
+                            <option value="withdraw">Withdraw</option>
+                            <option value="deposit">Deposit</option>
+                            <option value="fee">Fee</option>
+                        </select>
+                    </div>
+
+                    <div class="form-section">
+                        <label>Transaction Description:</label>
+                        <input type="text" name="transactionDescription" size="40" title="Enter your first name" required>
+                    </div>
+
+                    <div class="form-section">
+                        <input type="submit" class="fancyButton-1" value="Submit">
+                        <input type="reset" class="fancyButton-2" value="Reset">
+                    </div>
+                </form>
+                
             </div>
+
         </section>
+
     </body>
 </html>
