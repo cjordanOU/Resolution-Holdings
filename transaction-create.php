@@ -19,8 +19,9 @@
                 <h1>New Transaction</h1>
                 <p>Account-ID: <?php echo $_POST["transaction_account"];?></p>
 
+                <?php require('Includes/transactionCreationHandler.php'); ?>
                 <!-- Form is protected from SQL injection by using htmlspecialchars -->
-                <form id="signupForm" action="accounts.php" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="form-section">
                         <label>Transaction Amount:</label>
                         <input type="text" name="transactionAmount" size="40" title="Enter your first name" required>
