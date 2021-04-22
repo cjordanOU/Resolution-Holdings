@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
 
                             // Employee Check
-                            $empCheck = "SELECT * FROM employees WHERE MEMBER_ID=$id";
+                            $empCheck = "SELECT * FROM employees WHERE MEMBER_ID=$id and WHEN_TERMINATED IS NULL";
                             $checkEmployee = $connection-> query($empCheck);
 
                             if ($checkEmployee-> num_rows > 0) {
