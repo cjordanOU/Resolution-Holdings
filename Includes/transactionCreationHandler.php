@@ -12,10 +12,6 @@
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        foreach($_POST as $key => $value) {
-            echo "Key: " . $key . "     Value: " . $value;
-            echo "<br>";
-        }
 
         $trnAmount = trim($_POST["transactionAmount"]);
         $trnType = trim($_POST["transactionType"]);
