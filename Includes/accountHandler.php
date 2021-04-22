@@ -6,6 +6,8 @@
     $sql = "SELECT * FROM accounts WHERE MEMBER_ID={$_SESSION["id"]}";
     $result = $connection-> query($sql);
 
+    echo 'is employee? ' . $_SESSION["employee"];  // DEBUG
+
     if ($result-> num_rows > 0) {
         while ($row = $result-> fetch_assoc()) {
             //echo "<tr><td>". $row["ACCOUNT_ID"] ."</td><td>&#36;". $row["ACCOUNT_BALACE"] ."</td><td>". $row["ACCOUNT_TYPE"] ."</td></tr>";
