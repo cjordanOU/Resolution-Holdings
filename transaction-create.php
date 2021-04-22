@@ -19,14 +19,15 @@
                 <h1>New Transaction</h1>
                 <p>Account-ID: <?php echo $_POST["transaction_account"];?></p>
 
-                <?php require('Includes/transactionCreationHandler.php'); ?>
                 <!-- Form is protected from SQL injection by using htmlspecialchars -->
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <form action="<?php echo htmlspecialchars("Includes/transactionCreationHandler.php"); ?>" method="post">
                     <div class="form-section">
                         <label>Transaction Amount:</label>
                         <input type="text" name="transactionAmount" size="40" title="Enter your first name" required>
                     </div>
 
+
+                    
                     <div class="form-section">
                         <label>Transaction Type:</label>
                         <select name="transactionType" title="Select your applicable gender" required>
@@ -42,6 +43,7 @@
                     </div>
 
                     <div class="form-section">
+                        <?php echo "<input type='hidden' name='transaction_account' value='". $_POST["transaction_account"] ."'>"; ?>
                         <input type="submit" class="fancyButton-1" value="Submit">
                         <input type="reset" class="fancyButton-2" value="Reset">
                     </div>

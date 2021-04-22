@@ -4,7 +4,7 @@
 
     // Select all of the user's accounts and display them
     //$sql = "SELECT * FROM transactions WHERE ACCOUNT_ID=2"; // Hardcoded Debug
-    $sql = "SELECT * FROM transactions WHERE ACCOUNT_ID={$_POST["transaction_account"]}";
+    $sql = "SELECT * FROM transactions WHERE ACCOUNT_ID={$_POST["transaction_account"]} ORDER BY `TRANSACTION_ID` DESC";
     $result = $connection-> query($sql);
 
     if ($result-> num_rows > 0) {
@@ -15,7 +15,7 @@
             echo "<h4>Account ID: ". $row["ACCOUNT_ID"] ."</h4>";
             echo "</div><div class='account-balance'>";
             echo "<h4>Amount: &#36;". $row["AMOUNT"] ."</h4>";
-            echo "<h4>New Balance: &#36;". $row["NEW_BALANCE"] ."</h4>";
+            echo "<h4>Description: ". $row["DESCRIPTION"] ."</h4>";
             echo "<a class='transaction-button' href='accounts.php' title='Return to the account view screen'>Return To Accounts</a><br>";
             echo "</div></section>";
         }
