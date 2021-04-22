@@ -34,18 +34,11 @@
 
         <section class="type-2">
         <div class="centered container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in nisl nec ex rhoncus ullamcorper.
-                    Aliquam maximus ex quis orci mattis, eu accumsan leo lacinia. Curabitur id turpis at neque congue tempor. 
-                    Quisque ultricies justo ut ex accumsan, a pellentesque magna condimentum. Nullam et bibendum nisl. Maecenas pulvinar finibus quam, 
-                    at luctus sapien consectetur non. Sed suscipit nisi et felis molestie, in sodales elit eleifend. Morbi posuere, neque vel dapibus venenatis, 
-                    ante diam commodo tortor, ac dignissim purus neque eu risus.
+                <p> Please note this is for demonstration purposes only, and does not actually manage real money. Please use an actual bank for managing real
+                    world money. 
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in nisl nec ex rhoncus ullamcorper.
-                    Aliquam maximus ex quis orci mattis, eu accumsan leo lacinia. Curabitur id turpis at neque congue tempor. 
-                    Quisque ultricies justo ut ex accumsan, a pellentesque magna condimentum. Nullam et bibendum nisl. Maecenas pulvinar finibus quam, 
-                    at luctus sapien consectetur non. Sed suscipit nisi et felis molestie, in sodales elit eleifend. Morbi posuere, neque vel dapibus venenatis, 
-                    ante diam commodo tortor, ac dignissim purus neque eu risus.
+                <p> Resolute Holdings is not copyrighted by us, nor are we profiting from it.
                 </p>
 
             </div>
