@@ -16,11 +16,11 @@
 
         <section>
             <div class="centered container">
-                <h1>Now viewing accounts for <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+                <h1>Accounts Admin View - <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
             </div>
 
             <div class="centered container">
-                <?php require("Includes/accountHandler.php");?>
+                
             </div>
         </section>
     </body>
