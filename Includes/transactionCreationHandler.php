@@ -12,7 +12,6 @@
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
         $trnAmount = trim($_POST["transactionAmount"]);
         $trnType = trim($_POST["transactionType"]);
         $trnDesc = trim($_POST["transactionDescription"]);

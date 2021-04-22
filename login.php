@@ -31,6 +31,9 @@
                     <input type="submit" name="loginSubmit" value="Login" class="fancyButton-1">
                 </form>
                 <p>Need to register for an account? <a href="signup.php" title="Click here to go to the sign up page" class="link-1">Sign up here.</a></p>
+                <?php
+                    if(!empty($login_err)) echo "<p>$login_err</p>"
+                ?>
             </div>
         </section>
         
