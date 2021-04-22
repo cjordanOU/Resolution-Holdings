@@ -69,12 +69,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $checkEmployee = $connection-> query($empCheck);
 
                             if ($checkEmployee-> num_rows > 0) {
-                                $_SESSION["employee"] = 'yes';
+                                $_SESSION["employee"] = true;
                                 // Redirect user to accounts page
                                 header("location: accounts.php");
                             }
                             else {
-                                $_SESSION["employee"] = 'no';
+                                $_SESSION["employee"] = false;
                                 // Redirect user to accounts page
                                 header("location: accounts.php");
                             }
