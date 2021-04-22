@@ -33,11 +33,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Validate credentials
-    if(empty($username_err) && empty($password_err)){
+    if(empty($username_err) && empty($password_err)) {
         // Prepare a select statement
         $sql = "SELECT MEMBER_ID, USERNAME, PASSWORD FROM members WHERE USERNAME = ?";
 
-        if($stmt = mysqli_prepare($connection, $sql)){
+        if($stmt = mysqli_prepare($connection, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
 
@@ -54,6 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
 
+
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
@@ -68,6 +69,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $empCheck = "SELECT * FROM employees WHERE MEMBER_ID=$id and WHEN_TERMINATED IS NULL";
                             $checkEmployee = $connection-> query($empCheck);
 
+                            $loginAttemptStatement = "INSERT INTO login_attempts (`TIME`, `SUCCESS`, `MEMBER_ID`) VALUES(NOW(), 1 ,$id)";
+                            if($stmt = mysqli_prepare($connection, $loginAttemptStatement)) {
+                                mysqli_stmt_execute($stmt);
+                            }
+
                             if ($checkEmployee-> num_rows > 0) {
                                 $_SESSION["employee"] = true;
                                 // Redirect user to accounts page
@@ -80,6 +86,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             }
 
                         } else{
+
+                            $loginAttemptStatement = "INSERT INTO login_attempts (`TIME`, `SUCCESS`, `MEMBER_ID`) VALUES(NOW(), 0 ,$id)";
+                            if($stmt = mysqli_prepare($connection, $loginAttemptStatement)) {
+                                mysqli_stmt_execute($stmt);
+                            }
+
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
 
@@ -89,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Username doesn't exist, display a generic error message
                     $login_err = "Invalid username or password.";
                 }
-            } else{
+            } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
 
