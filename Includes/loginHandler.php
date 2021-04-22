@@ -62,14 +62,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;  
+                            $_SESSION["username"] = $username;
 
-                            // Redirect user to accounts page
-                            header("location: accounts.php");
+                            // Employee Check
+                            $empCheck = "SELECT * FROM employees WHERE MEMBER_ID=$id";
+                            $checkEmployee = $connection-> query($empCheck);
+
+                            if ($checkEmployee-> num_rows > 0) {
+                                $_SESSION["employee"] = 'yes';
+                                // Redirect user to accounts page
+                                header("location: accounts.php");
+                            }
+                            else {
+                                $_SESSION["employee"] = 'no';
+                                // Redirect user to accounts page
+                                header("location: accounts.php");
+                            }
 
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
+
                         }
                     }
                 } else{
