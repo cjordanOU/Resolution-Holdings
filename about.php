@@ -21,6 +21,13 @@
         </div>
 
         <section>
+            
+
+            <div class="centered container">
+                <p> Resolution Holdings was created to demonstrate some of the programing and datbase management involved in banking.
+                    Though real money is not handled, the features available give a simulation of the real online banking experience. 
+                </p>
+            </div>
         </section>
     </body>
 </html>
