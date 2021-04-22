@@ -6,8 +6,6 @@
     $sql = "SELECT * FROM accounts WHERE MEMBER_ID={$_SESSION["id"]}";
     $result = $connection-> query($sql);
 
-    echo 'is employee? ' . $_SESSION["employee"];  // DEBUG
-
     if ($result-> num_rows > 0) {
         while ($row = $result-> fetch_assoc()) {
             //echo "<tr><td>". $row["ACCOUNT_ID"] ."</td><td>&#36;". $row["ACCOUNT_BALACE"] ."</td><td>". $row["ACCOUNT_TYPE"] ."</td></tr>";
@@ -28,6 +26,11 @@
                 echo "<form action='transaction-create.php' method='POST'>";
                 echo "<input type='hidden' name='transaction_account' value='". $row["ACCOUNT_ID"] ."'>";
                 echo "<input type='submit' value='Make Transaction' title='Make a new transaction online'>";
+                
+                if (($_SESSION["employee"]) == true) {
+                    echo "<br><p>employee menu goes here</p>";
+                }
+
                 echo "</form><br><br>";
             }
             else {
@@ -40,6 +43,9 @@
                 echo "<input type='submit' value='View Transactions' title='View the transactions associated with this account'>";
                 echo "</form><br>";
                 echo "<p>Note: You cannot make new transactions with a closed or frozen account</p>";
+                if (($_SESSION["employee"]) == true) {
+                    echo "<br><p>employee menu goes here</p>";
+                }
             }
 
             echo "</div></section>";
