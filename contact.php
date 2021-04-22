@@ -22,6 +22,13 @@
         </div>
 
         <section>
+            
+
+            <div class="centered container">
+                <p> This is not a real bank, there is no email or phone number to actually contact. If a email or phone number is linked to a 
+                    Resolution Holdings, it is not ours.
+                </p>
+            </div>
         </section>
     </body>
 </html>
