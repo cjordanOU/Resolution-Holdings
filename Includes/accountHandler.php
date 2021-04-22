@@ -26,6 +26,11 @@
                 echo "<form action='transaction-create.php' method='POST'>";
                 echo "<input type='hidden' name='transaction_account' value='". $row["ACCOUNT_ID"] ."'>";
                 echo "<input type='submit' value='Make Transaction' title='Make a new transaction online'>";
+                
+                if (($_SESSION["employee"]) == true) {
+                    echo "<br><p>employee menu goes here</p>";
+                }
+
                 echo "</form><br><br>";
             }
             else {
@@ -38,6 +43,9 @@
                 echo "<input type='submit' value='View Transactions' title='View the transactions associated with this account'>";
                 echo "</form><br>";
                 echo "<p>Note: You cannot make new transactions with a closed or frozen account</p>";
+                if (($_SESSION["employee"]) == true) {
+                    echo "<br><p>employee menu goes here</p>";
+                }
             }
 
             echo "</div></section>";
