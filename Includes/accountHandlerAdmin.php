@@ -56,7 +56,14 @@
 
             echo "</div><div class='account-balance'>";
             echo "<br><input type='submit' class='fancyButton-1'>";
-            echo "</div></form></section>";
+            echo "</div></form><br><br>";
+
+            // Transaction Viewer logic
+            echo "<form action='transaction-info.php' method='POST' class='viewAccountButton'>";
+            echo "<input type='hidden' name='transaction_account' value='". $row["ACCOUNT_ID"] ."'>";
+            echo "<input type='submit' value='View Account Transactions' title='View the transactions associated with this account'>";
+            echo "</form>";
+            echo "</section>";
         }
     }
 ?>
