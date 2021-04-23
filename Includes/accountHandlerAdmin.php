@@ -14,7 +14,9 @@
             echo "<section class='account-box'><h2>Account ID: ". $row["ACCOUNT_ID"] ." (Member ID: ". $row["MEMBER_ID"]. ")</h2>";
 
             // Form
-            echo "<div class='account-info'<form action='DEBUG' method='post'>";
+            echo "<form action='Includes/accountUpdater.php' method='post'>";
+            echo "<input type='hidden' name='account-id' value='". $row["ACCOUNT_ID"] . "'>";
+            echo "<div class='account-info'>";
             
             // Linked member logic
             echo "<label>Linked Member ID: </label><input type='text' name='linkedMember' value='". $row["MEMBER_ID"] ."'>";
@@ -46,7 +48,7 @@
             echo "<br><label>Account Created On: </label><input type='text' name='creationTime' value='". $row["CREATED"] ."'>";
 
             // Account balance logic
-            echo "<br><label>Account Balance: </label><input type='text' name='linkedMember' value='". $row["ACCOUNT_BALACE"] ."'>"; // Note: The database uses 'BALACE' not 'BALANCE'
+            echo "<br><label>Account Balance: </label><input type='text' name='account-balance' value='". $row["ACCOUNT_BALACE"] ."'>"; // Note: The database uses 'BALACE' not 'BALANCE'
 
             echo "</div><div class='account-balance'>";
             echo "<input type='submit' class='fancyButton-1'>";
