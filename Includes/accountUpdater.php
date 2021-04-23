@@ -8,6 +8,7 @@
     $AccountStatus = "";
     $AccountCreatedOn = "";
     $AccountBalance = "";
+    $DeleteAccount = "";
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,6 +19,7 @@
         $AccountStatus = trim($_POST["account-status"]);
         $AccountCreatedOn = trim($_POST["creationTime"]);
         $AccountBalance = trim($_POST["account-balance"]);
+        $DeleteAccount = trim($_POST["account-delete"]);
         
         // Prepare an insert statement
         //$sql = "UPDATE accounts SET (`ACCOUNT_BALANCE`, `ACCOUNT_TYPE`, `CREATED`, `ACCOUNT_STATUS`, `MEMBER_ID`) VALUES (?, ?, ?, ?, ?) WHERE ACCOUNT_ID={$AccountID}";
@@ -29,7 +31,16 @@
             echo "Testing3";
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                // Redirect to account page
+
+                if($DeleteAccount == "yes"){
+                    $delSQL = "DELETE FROM accounts WHERE ACCOUNT_ID={$AccountID}";
+                    if(mysqli_query($connection, $delSQL)){
+                        // Redirect to account admin page
+                        header("location: ../accounts-admin.php");
+                    }
+                }
+
+                // Redirect to account admin page
                 header("location: ../accounts-admin.php");
             } else {
                 echo "Something went wrong. Please try again later.";

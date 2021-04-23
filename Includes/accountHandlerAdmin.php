@@ -50,8 +50,12 @@
             // Account balance logic
             echo "<br><label>Account Balance: </label><input type='text' name='account-balance' value='". $row["ACCOUNT_BALACE"] ."'>"; // Note: The database uses 'BALACE' not 'BALANCE'
 
+            // Account Deleete Logic
+            echo "<br><label for='account-delete'>Delete Account?: </label>";
+            echo "<select name='account-delete'><option value='no'>no</option><option value='yes'>yes</option></select>";
+
             echo "</div><div class='account-balance'>";
-            echo "<input type='submit' class='fancyButton-1'>";
+            echo "<br><input type='submit' class='fancyButton-1'>";
             echo "</div></form></section>";
         }
     }
