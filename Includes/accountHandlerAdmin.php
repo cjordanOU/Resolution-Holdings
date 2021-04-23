@@ -11,14 +11,46 @@
 
     if ($result-> num_rows > 0) {
         while ($row = $result-> fetch_assoc()) {
-            echo "<section class='account-box'><h2>Account ID: ". $row["ACCOUNT_ID"] ."</h2>";
-            echo "<h3>Linked Member ID: ". $row["MEMBER_ID"] . "</h3>";
-            echo "<div class='account-info'><h4>Account Type: ". ucfirst($row["ACCOUNT_TYPE"]) ."</h4>";
-            echo "<h4>Account Status: <span class='account-open'>". ucfirst($row["ACCOUNT_STATUS"]) ."</span></h4>";
-            echo "<h4>Account Created On: ". $row["CREATED"] ."</h4>";
+            echo "<section class='account-box'><h2>Account ID: ". $row["ACCOUNT_ID"] ." (Member ID: ". $row["MEMBER_ID"]. ")</h2>";
+
+            // Form
+            echo "<div class='account-info'<form action='DEBUG' method='post'>";
+            
+            // Linked member logic
+            echo "<label>Linked Member ID: </label><input type='text' name='linkedMember' value='". $row["MEMBER_ID"] ."'>";
+
+            // Account type logic
+            echo "<br><label for='acType'>Account Type: </label>";
+            echo "<select name='account-type'><option value='". $row["ACCOUNT_TYPE"] . "'>". $row["ACCOUNT_TYPE"] . "</option>";
+            if ($row["ACCOUNT_TYPE"] == 'saving') {
+                echo "<option value='checking'>checking</option></select>";
+            }
+            else {
+                echo "<option value='saving'>saving</option></select>";
+            }
+
+            // Account status logic
+            echo "<br><label for='acStatus'>Account Status: </label>";
+            echo "<select name='account-status'><option value='". $row["ACCOUNT_STATUS"] . "'>". $row["ACCOUNT_STATUS"] . "</option>";
+            if ($row["ACCOUNT_STATUS"] == 'open') {
+                echo "<option value='closed'>closed</option><option value='frozen'>frozen</option></select>";
+            }
+            if ($row["ACCOUNT_STATUS"] == 'closed') {
+                echo "<option value='open'>open</option><option value='frozen'>frozen</option></select>";
+            }
+            if ($row["ACCOUNT_STATUS"] == 'frozen') {
+                echo "<option value='open'>open</option><option value='closed'>closed</option></select>";
+            }
+
+            // Account created on logic
+            echo "<br><label>Account Created On: </label><input type='text' name='creationTime' value='". $row["CREATED"] ."'>";
+
+            // Account balance logic
+            echo "<br><label>Account Balance: </label><input type='text' name='linkedMember' value='". $row["ACCOUNT_BALACE"] ."'>"; // Note: The database uses 'BALACE' not 'BALANCE'
+
             echo "</div><div class='account-balance'>";
-            echo "<h3>Account Balance: &#36;". number_format($row["ACCOUNT_BALACE"],2) ."</h3>"; // Note: The database uses 'BALACE' not 'BALANCE'
-            echo "</div></section>";
+            echo "<input type='submit' class='fancyButton-1'>";
+            echo "</div></form></section>";
         }
     }
 ?>
