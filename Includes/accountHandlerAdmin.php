@@ -11,7 +11,7 @@
 
     if ($result-> num_rows > 0) {
         while ($row = $result-> fetch_assoc()) {
-            echo "<section class='account-box'><h2>Account ID: ". $row["ACCOUNT_ID"] ." (Member ID: ". $row["MEMBER_ID"]. ")</h2>";
+            echo "<section class='account-box2'><h2>Account ID: ". $row["ACCOUNT_ID"] ." (Member ID: ". $row["MEMBER_ID"]. ")</h2>";
 
             // Form
             echo "<form action='Includes/accountUpdater.php' method='post'>";
