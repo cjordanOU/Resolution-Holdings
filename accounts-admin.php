@@ -20,7 +20,7 @@
             </div>
 
             <div class="centered container">
-                
+            <?php require("Includes/accountHandlerAdmin.php");?>
             </div>
         </section>
     </body>

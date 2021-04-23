@@ -6,7 +6,7 @@
     $sql = "SELECT * FROM accounts WHERE MEMBER_ID={$_SESSION["id"]}";
     $result = $connection-> query($sql);
 
-    // Admin Tools
+    // Admin Tools Button
     if (($_SESSION["employee"]) == true) {
         echo "<a href='accounts-admin.php' title='View accounts admin page' class='fancyButton-1'>Account Admin View</a>";
     }
