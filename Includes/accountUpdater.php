@@ -1,8 +1,6 @@
 <?php
     // dbConfig include
     require_once 'dbConfig.php';
-    
-    echo "testing1";
     // Define/Initialize variables
     $linkedMemberID = "";
     $AccountID = "";
@@ -20,15 +18,14 @@
         $AccountStatus = trim($_POST["account-status"]);
         $AccountCreatedOn = trim($_POST["creationTime"]);
         $AccountBalance = trim($_POST["account-balance"]);
-        echo "testing2";
         
         // Prepare an insert statement
         //$sql = "UPDATE accounts SET (`ACCOUNT_BALANCE`, `ACCOUNT_TYPE`, `CREATED`, `ACCOUNT_STATUS`, `MEMBER_ID`) VALUES (?, ?, ?, ?, ?) WHERE ACCOUNT_ID={$AccountID}";
-        $sql = "UPDATE accounts SET ACCOUNT_BALANCE={$AccountBalance}, ACCOUNT_TYPE={$AccountType}, CREATED={$AccountCreatedOn}, ACCOUNT_STATUS={$AccountStatus}, MEMBER_ID={$linkedMemberID} WHERE ACCOUNT_ID={$AccountID}";
+        $sql = "UPDATE accounts SET `ACCOUNT_BALACE`=?, `ACCOUNT_TYPE`=?, `CREATED`=?, `ACCOUNT_STATUS`=?, `MEMBER_ID`=? WHERE `ACCOUNT_ID`=?";
 
         if($stmt = mysqli_prepare($connection, $sql)){
             // Bind variables to the prepared statement as parameters (redundant?)
-            mysqli_stmt_bind_param($stmt, "sssss", $AccountBalance, $AccountType, $AccountCreatedOn, $AccountStatus, $linkedMemberID);
+            mysqli_stmt_bind_param($stmt, "ssssss", $AccountBalance, $AccountType, $AccountCreatedOn, $AccountStatus, $linkedMemberID, $AccountID);
             echo "Testing3";
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -40,6 +37,8 @@
 
             // Close statement
             mysqli_stmt_close($stmt);
+        } else {
+            echo "Something went wrong, please try again later.";
         }
 
     }
